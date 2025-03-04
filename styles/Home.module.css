@@ -1,0 +1,256 @@
+.container {
+  max-width: 100%;
+  padding: 20px;
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  background: linear-gradient(135deg, rgb(14, 3, 62) 0%, rgb(30, 7, 107) 100%);
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.sectionsContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  gap: 30px;
+  padding: 0 10px;
+  min-height: 0;
+}
+
+.section {
+  flex: 1;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.47);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sectionHeader:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.sectionHeader h2 {
+  color: #ffffff;
+  font-size: 2.8em;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.sectionHeader:hover h2 {
+  transform: scale(1.02);
+}
+
+.videoGrid {
+  display: grid;
+  width: 100%;
+  flex: 1;
+  justify-items: center;
+  align-items: center;
+  min-height: 0;
+  gap: 13px;
+  padding: 13px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.videoContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.videoContainer:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.videoTitle {
+  color: white;
+  padding: 12px;
+  font-size: 2.0em;
+  font-weight: bold;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.videoTitle:hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: #007bff;
+}
+
+/* Success Message Styles */
+.successMessage {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 1rem 2rem;
+  background: rgba(46, 213, 115, 0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  animation: fadeOut 3s forwards;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; transform: translateY(0); }
+  70% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.videoFrame {
+  position: relative;
+  flex: 1;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.videoFrame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.digitalClock {
+  padding: 1rem 4rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #ffffff;
+  font-family: monospace;
+  font-weight: bold;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.digitalClock:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.47);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.digitalClock .time {
+  font-size: 6em;
+  font-weight: bold;
+  margin-bottom: 0.7rem;
+  line-height: 1;
+  letter-spacing: 0.125rem;
+  white-space: nowrap;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(to right, #fff, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.digitalClock .date {
+  font-size: 4em;
+  opacity: 0.9;
+  letter-spacing: 0.0625rem;
+  white-space: nowrap;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.adminLink {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.adminLink:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .sectionsContainer {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sectionHeader h2 {
+    font-size: 2em;
+  }
+
+  .digitalClock {
+    padding: 1.5rem 2rem;
+  }
+
+  .digitalClock .time {
+    font-size: 5em;
+  }
+
+  .digitalClock .date {
+    font-size: 3em;
+  }
+}
