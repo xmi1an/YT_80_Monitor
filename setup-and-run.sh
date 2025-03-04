@@ -19,12 +19,12 @@ rm -rf YT_80_Monitor-main
 echo "Project downloaded and extracted."
 
 # Update package repositories
-echo "Updating package repositories..."
-sudo apt-get update
+# echo "Updating package repositories..."
+# sudo apt-get update
 
 # Install curl and unzip if not present
-echo "Installing required tools..."
-sudo apt-get install -y curl unzip
+# echo "Installing required tools..."
+# sudo apt-get install -y curl unzip
 
 # Install Node.js and npm using NodeSource
 echo "Installing Node.js and npm..."
@@ -39,14 +39,6 @@ npm --version
 # Install project dependencies
 echo "Installing project dependencies..."
 npm install
-
-# # Import data if needed
-# echo "Would you like to import initial data? (y/n)"
-# read -r response
-# if [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]; then
-#     echo "Importing data..."
-#     npm run import-data
-# fi
 
 # Start development server
 echo "Starting development server..."
