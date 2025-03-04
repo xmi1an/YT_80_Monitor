@@ -133,7 +133,7 @@ export default function Home() {
             onAdd={(section) => handleAdd(section)}
             onDelete={handleDelete}
           />
-          <DigitalClock />
+          {/* <DigitalClock /> */}
         </div>
       )}
 
